@@ -1,0 +1,362 @@
+/* ==========================================================
+   Institut-Phare — Style commun des fiches
+   Ambiance : littoral, lumière, sobriété, lisibilité
+   ========================================================== */
+
+:root {
+  --bg: #fff5e0;            /* sable très clair */
+  --sea: #aae6f7;           /* bleu mer pastel */
+  --card: #ffffffcc;        /* blanc chaud translucide */
+  --maincard: #ffffff73;        /* blanc chaud translucide */
+  --accent: #31a7be;        /* bleu côtier */
+  --accent2: #ecce91;       /* sable doré */
+  --text: #243333;          /* gris-vert doux */
+  --muted: #5f7777;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, var(--sea) 0%, var(--bg) 65%);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* =============================
+   Layout général
+   ============================= */
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5rem 2rem 6rem;
+}
+
+/* =============================
+   Header de page
+   ============================= */
+header {
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--sand-300);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+header h1 span {
+  color: var(--accent);
+}
+
+header p {
+  max-width: 760px;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+
+.page-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.page-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+
+.page-intro {
+  max-width: 760px;
+  margin: 0 auto 1.2rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent2);
+}
+
+
+
+
+
+
+/* =============================
+   Page principale
+   ============================= */
+   
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero-logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+
+.hero-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-inspiration {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #3a4f4f;
+  max-width: 760px;
+  margin: 0 auto;
+  font-style: italic;
+  position: relative;
+}
+
+.hero-inspiration::before {
+  content: "''";
+  position: absolute;
+  left: -1.2rem;
+  top: -0.6rem;
+  font-size: 3rem;
+  color: var(--accent2);
+  opacity: 0.4;
+}
+
+.hero-inspiration::after {
+  content: "''";
+  position: absolute;
+  right: -1.1rem;
+  bottom: -1.6rem;
+  font-size: 3rem;
+  color: var(--accent2);
+  opacity: 0.4;
+}
+
+
+/* =============================
+   Sections
+   ============================= */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+.section {
+  margin-bottom: 5rem;
+}
+
+.section-alt {
+  padding-top: 3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.section h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.section-lead {
+  max-width: 820px;
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+  color: var(--muted);
+}
+
+/* =============================
+   Tuiles doctrinales
+   ============================= */
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+
+.tiles-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .tiles-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.maintile {
+  background: var(--maincard);
+  backdrop-filter: blur(6px);
+  border-radius: 22px;
+  padding: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.maintile h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.maintile p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.tile {
+  background: var(--card);
+  backdrop-filter: blur(6px);
+  border-radius: 22px;
+  padding: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.tile:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.tile-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.tile h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.tile p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.tile .tag {
+      display: inline-block;
+      margin-top: 1.2rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent2);
+}
+
+
+/* =============================
+   Scénarios
+   ============================= */
+
+.scenario {
+  background: var(--card);
+  border-radius: 22px;
+  padding: 2.2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.scenario h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.scenario p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* =============================
+   Footer
+   ============================= */
+
+footer {
+  margin-top: 5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer span {
+  color: var(--accent);
+}
+
+.page-footer {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.page-footer h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.page-footer ul {
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.page-footer li {
+  margin-bottom: 0.6rem;
+}
